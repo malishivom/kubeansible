@@ -24,6 +24,7 @@
       user:
        name: centos
        password: "root"
+       groups: sudo
        state: present
        shell: /bin/bash
        system: no
