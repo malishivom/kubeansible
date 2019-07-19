@@ -1,7 +1,7 @@
 echo "This below script will run on kube master for Dashboard"
 read -p "Enter the password for certificate which will be used in your browser at import time : " certpass
 export certpass=$certpass
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta1/aio/deploy/recommended.yaml
 kubectl config view
 echo "This Script will create the certificate with password set as root"
 grep 'client-certificate-data' ~/.kube/config | head -n 1 | awk '{print $2}' | base64 -d >> kubecfg.crt
